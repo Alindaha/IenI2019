@@ -15,6 +15,7 @@ function draw() {
   ellipse(450,450,diameter);
   fill('black');
   ellipse(100,hoogte,100);
+  hoogte = constrain(hoogte,100,height-50);
   hoogte++;
   diameter++;
 }
