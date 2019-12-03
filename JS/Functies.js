@@ -10,14 +10,16 @@ function setup() {
 
 function draw() {
   background('silver');
-  noStroke();
-  fill('deepskyblue');
-  ellipse(450,450,diameter);
-  fill('grey');
-  ellipse(0,0,diameter);
-  fill('black');
-  ellipse(100,hoogte,100);
+  TekenCirkel(450,450,diameter,'deepskyblue');
+  TekenCirkel(0,0,diameter,'grey');
+  TekenCirkel(100,hoogte,100,'black');
   hoogte = constrain(hoogte,100,height-50);
   hoogte++;
   diameter++;
+}
+
+function TekenCirkel(x,y,d,kleur){
+    noStroke();
+    fill(kleur);
+    ellipse(x,y,d);
 }
