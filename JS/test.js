@@ -22,19 +22,21 @@ function draw() {
   stroke('gray');
   ellipse(450,250,200);
 
-  //C
+  //B
   noStroke();
+  stroke('gray');
+  fill('white');
+  ellipse(750,250,200);
   fill('black');
   ellipse(800,250,200);
-  fill('white');
-  stroke('gray');
-  ellipse(800,250,150);
 
   //D
   noStroke();
   fill('black');
-  ellipse(1200,250,200);
+  ellipse(1050,250,200);
   fill('white');
   stroke('gray');
-  ellipse(800,250,250);
+  ellipse(1050,250,150);
+
+
 }
