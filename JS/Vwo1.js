@@ -43,7 +43,7 @@ function draw() {
         xBal=xBal+sBal;
     }
     pAfstand=dist(xJOS,yPijl,xBal,yBal);
-    if(pAfstand<=(dBal/2)){
+    if(pAfstand<=(dBal/2)&& keyIsDown(32)){
         level++;
         dBal=random(10,80);
         xBal=random(dBal/2,width-dBal/2);
