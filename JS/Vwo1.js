@@ -9,10 +9,15 @@ var sBal=5;
 var pAfstand;
 var jAfstand;
 var voorraad;
+var achtergrond;
+
+function preload(){
+    achtergrond=loadImage("images/GrijzeCirkelsM.jpg");
+}
 
 function setup() {
     canvas = createCanvas(450,450);
-    background('silver');
+    background(achtergrond);
     canvas.parent('processing');
     dBal=random(30,80);
     xBal=random(dBal/2,width-dBal/2);
@@ -23,7 +28,7 @@ function setup() {
 }
 
 function draw() {
-    background('silver');
+    background(achtergrond);
     fill('black');
     tekenJos(xJOS,yJOS);
     tekenBal(xBal,yBal,dBal);
@@ -47,7 +52,7 @@ function draw() {
         yPijl=375;
     }
     jAfstand=dist(xJOS,yJOS,xBal,yBal);
-    if(jAfstand<=(dBal+25)|| yBal>=(height-(dBal/2))){
+    if(jAfstand<=((dBal/2)+25)|| yBal>=(height-(dBal/2))){
         if(voorraad>0){
             voorraad--;
         } else {
@@ -90,7 +95,9 @@ function gebruikersBesturing(){
 function eindScherm(score){
     push();
     textSize(50);
-    background('black');
+    stroke('black');
+    strokeWeight(10);
+    //background('black');
     fill('pink');
     text("Game over! \nJe score is " + score, 75,200);
     noLoop();
@@ -100,7 +107,7 @@ function eindScherm(score){
 function tekenVoorraad(v){
     push();
     noStroke();
-    fill('grey');
+    fill('black');
     translate(width,height-30);
     for (var i=0;i<v;i++){
         translate(-20,0);
@@ -111,6 +118,7 @@ function tekenVoorraad(v){
 
 function tekenBal(x,y,d){
     push();
+    stroke('gray');
     fill('pink');
     ellipse(x,y,d);
     pop();
@@ -119,7 +127,7 @@ function tekenBal(x,y,d){
 function tekenPijl(x,h){
     push();
     noStroke();
-    fill('grey');
+    fill('black');
     triangle(x,yPijl,x-10,yPijl+20,x+10,yPijl+20);
     h=h+10;
     pop();
