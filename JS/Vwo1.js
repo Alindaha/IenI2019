@@ -97,7 +97,6 @@ function eindScherm(score){
     textSize(50);
     stroke('black');
     strokeWeight(10);
-    //background('black');
     fill('pink');
     text("Game over! \nJe score is " + score, 75,200);
     noLoop();
