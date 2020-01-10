@@ -90,6 +90,7 @@ function bubbelBesturing(){
         yBubbel=dBubbel/2;      
         snelheidBubbel++;
         yPijl=375;
+        pijlIsAanwezig=false;
     }
     jAfstand=dist(xJOS,yJOS,xBubbel,yBubbel);
     if(jAfstand<=((dBubbel/2)+25)|| yBubbel>=(height-(dBubbel/2))){
@@ -140,8 +141,7 @@ function tekenPijl(x,h){
     push();
     noStroke();
     fill('black');
-    triangle(x,yPijl,x-10,yPijl+20,x+10,yPijl+20);
-    h=h+10;
+    triangle(x,h,x-10,h+20,x+10,h+20);
     pop();
 }
 
