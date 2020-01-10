@@ -19,8 +19,8 @@ function setup() {
     canvas.parent('processing');
     textFont("Verdana");
     textSize(20);
-    dBubbel=random(30,80);
-    xBubbel=random(dBubbel/2,width-dBubbel/2);
+    dBubbel=50;
+    xBubbel=width/2;
     yBubbel=dBubbel/2;
     voorraad=3;
     pijlIsAanwezig=false;
@@ -64,6 +64,7 @@ function gebruikersBesturing(){
 }
 
 function bubbelBesturing(){
+    //deze if-else zorgt ervoor dat de bal heen en weer kaatst
     if(xBubbel>(dBubbel/2) && xBubbel<(width-(dBubbel/2))){
         xBubbel=xBubbel+snelheidBubbel;
         yBubbel=yBubbel+0.1*level;
@@ -74,10 +75,7 @@ function bubbelBesturing(){
     pAfstand=dist(xPijl,yPijl,xBubbel,yBubbel);
     if(pAfstand<=(dBubbel/2)){
         level++;
-        dBubbel=random(10,80);
-        xBubbel=random(dBubbel/2,width-dBubbel/2);
-        yBubbel=dBubbel/2;      
-        snelheidBubbel++;
+        nieuweBubbel();      
         yPijl=375;
         pijlIsAanwezig=false;
     }
@@ -88,20 +86,24 @@ function bubbelBesturing(){
         } else {
             eindScherm(level-1);
         }
-        dBubbel=random(10,80);
-        xBubbel=random(dBubbel/2,width-dBubbel/2);
-        yBubbel=dBubbel/2;
+        nieuweBubbel();
         yPijl=375;
     }
 }
 
-function eindScherm(score){
+function nieuweBubbel(){
+    dBubbel=50;
+    xBubbel=width/2;
+    yBubbel=dBubbel/2;
+}
+
+function eindScherm(){
     push();
     textSize(50);
     stroke('black');
     strokeWeight(10);
     fill('pink');
-    text("Game over! \nJe score is " + score, 75,200);
+    text("Game over!", 75,200);
     noLoop();
     pop();
 }

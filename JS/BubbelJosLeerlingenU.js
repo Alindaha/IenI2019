@@ -58,7 +58,14 @@ function gebruikersBesturing(){
             yPijl=375;
             pijlIsAanwezig=false;
         }
-        yPijl--;
+        if(keyIsDown(UP_ARROW)){
+            yPijl-=2;
+        }
+        if(keyIsDown(DOWN_ARROW)){
+            yPijl-=0.5;
+        } else {
+            yPijl--;
+        }
     }
     xJOS=constrain(xJOS,25,425);
 }
@@ -74,9 +81,7 @@ function bubbelBesturing(){
     pAfstand=dist(xPijl,yPijl,xBubbel,yBubbel);
     if(pAfstand<=(dBubbel/2)){
         level++;
-        dBubbel=random(10,80);
-        xBubbel=random(dBubbel/2,width-dBubbel/2);
-        yBubbel=dBubbel/2;      
+        nieuweBubbel();    
         snelheidBubbel++;
         yPijl=375;
         pijlIsAanwezig=false;
@@ -88,11 +93,15 @@ function bubbelBesturing(){
         } else {
             eindScherm(level-1);
         }
-        dBubbel=random(10,80);
-        xBubbel=random(dBubbel/2,width-dBubbel/2);
-        yBubbel=dBubbel/2;
+        nieuweBubbel();
         yPijl=375;
     }
+}
+
+function nieuweBubbel(){
+    dBubbel=random(10,80);
+    xBubbel=random(dBubbel/2,width-dBubbel/2);
+    yBubbel=dBubbel/2;
 }
 
 function eindScherm(score){
@@ -108,7 +117,11 @@ function eindScherm(score){
 
 function tekenVoorraad(v){
     push();
-
+    translate(width,height-30);
+    for (var i=0;i<v;i++){
+        translate(-20,0);
+        tekenPijl(0,0);
+    }
     pop();
 }
 
