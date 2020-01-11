@@ -83,7 +83,7 @@ function bubbelBesturing(){
         xBubbel=xBubbel+snelheidBubbel;
     }
     pAfstand=dist(xPijl,yPijl,xBubbel,yBubbel);
-    if(pAfstand<=(dBubbel/2)){
+    if(pAfstand<=(dBubbel/2)&&pijlIsAanwezig){
         level++;
         dBubbel=random(10,80);
         xBubbel=random(dBubbel/2,width-dBubbel/2);

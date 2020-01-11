@@ -1,3 +1,10 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+    
+<script>
 var xJOS=225;
 var yJOS=425;
 var level=1;
@@ -29,7 +36,7 @@ function setup() {
 function draw() {
     background('gray');
     tekenJos(xJOS,yJOS);
-    tekenBal(xBubbel,yBubbel,dBubbel);
+    tekenBubbel(xBubbel,yBubbel,dBubbel);
     tekenVoorraad(voorraad);
     fill('black');
     text("Level "+level,10,440);
@@ -64,7 +71,7 @@ function gebruikersBesturing(){
 }
 
 function bubbelBesturing(){
-    //deze if-else zorgt ervoor dat de bal heen en weer kaatst
+    //deze if-else zorgt ervoor dat de bubbel heen en weer kaatst
     if(xBubbel>(dBubbel/2) && xBubbel<(width-(dBubbel/2))){
         xBubbel=xBubbel+snelheidBubbel;
         yBubbel=yBubbel+0.1*level;
@@ -127,7 +134,7 @@ DE CODE HIERONDER IS NODIG VOOR HET WERKEN VAN HET SPEL,
 OVER DEZE CODE KOMEN GEEN VRAGEN OF OPDRACHTEN!
 ***************************************************************************/
 
-function tekenBal(x,y,d){
+function tekenBubbel(x,y,d){
     push();
     stroke('gray');
     fill('pink');
@@ -156,3 +163,10 @@ function tekenJos(x,y,s) {
     arc(0, 13, 26, 13, 0, PI, CHORD);
     pop();
 }
+</script>
+  </head>
+  <body>
+    <!-- Javascript plaatst alles in onderstaande div -->
+    <div id='mijnDiv'></div>
+  </body>
+</html>
