@@ -7,7 +7,7 @@ var xBubbel=100;
 var yBubbel=100;
 var dBubbel=50;
 var snelheidBubbel=5;
-var pAfstand; //afstand tussen de pijl en Jos
+var pAfstand; //afstand tussen de bubbel en de pijl
 var jAfstand; //afstand tussen de bubbel en Jos
 var voorraad;
 var pijlIsAanwezig;
