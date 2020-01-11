@@ -1,3 +1,5 @@
+var verticaal=0;
+
 function setup() {
     canvas = createCanvas(450, 450);
     background('white');
@@ -6,9 +8,8 @@ function setup() {
 }
 
 function draw() {
-    var aantal=5
-    for (var n = 1; n <=aantal;n++){
-        tekenBoom();
-        tranlate(0,100);
-    }
+    background('white');
+    fill('black');
+    rect(225,verticaal,100,100);
+    verticaal++;
 }
