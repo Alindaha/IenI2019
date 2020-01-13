@@ -58,7 +58,7 @@ function gebruikersBesturing(){
     if(pijlIsAanwezig){
         tekenPijl(xPijl,yPijl);  
         if(yPijl<=0 && voorraad==0){
-            eindScherm(level-1);
+            eindScherm();
         }
         if(yPijl<=0){
             voorraad--;
@@ -91,7 +91,7 @@ function bubbelBesturing(){
         if(voorraad>0){
             voorraad--;
         } else {
-            eindScherm(level-1);
+            eindScherm();
         }
         nieuweBubbel();
         yPijl=375;
