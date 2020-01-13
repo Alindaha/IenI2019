@@ -1,3 +1,10 @@
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+    
+<script>
 var xDier=0;
 var yDier=0;
 var kleur='white'
@@ -5,7 +12,7 @@ var kleur='white'
 function setup() {
   canvas = createCanvas(500,450);
   background('silver');
-  canvas.parent('processing');
+  canvas.parent('mijnDiv');
   //noLoop();
 }
 
@@ -40,3 +47,10 @@ function tekenDier(x,y,kleur){
     fill('brown');
     triangle(x-10,y+10,x+10,y+10,x,y+20);
 }
+</script>
+  </head>
+  <body>
+    <!-- Javascript plaatst alles in onderstaande div -->
+    <div id='mijnDiv'></div>
+  </body>
+</html>
